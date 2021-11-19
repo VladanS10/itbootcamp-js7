@@ -1,0 +1,36 @@
+/* p {
+    border-style: dashed;
+    border-color: red;
+    border-width: 4px; 
+    border: 4px dashed red;
+     border-radius: 50%;
+    margin: 50px 20px 10px 5px;
+    padding: 50px 20px 10px 5px;
+    width: 300px;
+    height: 100px;
+    background-color: rosybrown; 
+    display: block 
+    }  
+    */
+.spanovi{
+    display: flex;
+}
+#span1 {
+    border: 3px solid blue;
+    width: 450px;
+    height: 150px;
+    margin: 20px 50px 30px 10px;
+    padding: 35px 15px 10px 30px;
+    background-color: yellow;
+}
+#span2 {
+    border: 3px double gray;
+    width: 250px;
+    height: 150px;
+    margin: 20px 50px 30px 10px;
+    padding: 35px 15px 10px 30px;
+    background-color: wheat;
+}
+
+/* display: block;  mozes da menjas width i height za blokovske elemente */
+/* display: inline; za span */
