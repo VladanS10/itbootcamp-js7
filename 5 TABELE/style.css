@@ -1,0 +1,27 @@
+#tabela{
+    border: 1px solid red;
+}
+#tabela td{
+    border: 1px solid blue;
+}
+.table td {
+    padding: 2px 50px 2px 1px;
+}
+.table tr:nth-child(odd) {
+    font-style: italic;
+}
+.table tr:nth-child(3) {
+    background-color: yellow;
+}
+.tabela_2 td:nth-child(3n) {
+    background-color: yellow;
+}
+.tabela_2 tr {
+    padding: 2px 50px 2px 1px ;
+}
+.tabela_2 tr:nth-child(even):hover {
+    background-color: yellow;
+}
+.tabela_2 tr:nth-child(3n) {
+    color: blue;
+}
