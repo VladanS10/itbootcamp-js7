@@ -1,4 +1,4 @@
-/* p {
+p {
     border-style: dashed;
     border-color: red;
     border-width: 4px; 
@@ -11,7 +11,13 @@
     background-color: rosybrown; 
     display: block 
     }  
-    */
+    span {
+        width: 50%;
+        border: 2px solid black;
+        box-sizing: border-box;
+        height: 250px;
+    }
+   
 .spanovi{
     display: flex;
 }
