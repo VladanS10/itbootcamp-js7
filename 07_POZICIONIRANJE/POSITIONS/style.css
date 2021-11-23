@@ -80,9 +80,7 @@ p {
 }
 .p5 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    width: 100%;
-    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 40%;
+    /* transform: translate(-50%, -50%); */
 }

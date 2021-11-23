@@ -1,8 +1,9 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    
 }
-/* #parent {
+ /* #parent {
     background-color: brown;
     position: relative;
     width: 100%;
@@ -21,16 +22,16 @@
 }
 #parent p:nth-child(3) {
     left: 50%;
-} */
+} */ 
 
-/* Kada se koristi float svojstvo
+ /* Kada se koristi float svojstvo
 1) Mora da postoji deca koja se redjaju:
     float: (left ili right)
 2) Roditelji unutar kojeg se redjaju:
-    overflow: hidden;
-*/
+    overflow: hidden; */
 
-/* #parent {
+
+ /* #parent {
     background-color: brown;
     width: 100%;
     overflow: hidden;
@@ -43,12 +44,14 @@
 }
 #parent p:first-child{
     float: left;
-} */
+} 
 .topbar {
+    z-index: 1;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100%;    
     overflow: hidden;
+    background-image: url("img/pizza.jpg");
 }
 ul {
     
@@ -62,7 +65,6 @@ li {
     width: 25%;
     height: 50px;
     float: left;
-    border: 1px solid white;
     text-align: center;
 }
 li:hover {
@@ -78,3 +80,79 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.image {
+    background-image: url("img/pizza.jpg");
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+li + li {
+    border-left: 1px solid white;
+} 
+
+.image h1 {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.drp a {
+    display: grid;
+    color: rebeccapurple;
+} */
+body {
+    /* background-color: rosybrown; */
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 1; position: absolute;
+    width: 100%;
+}
+ul li {
+    float: left;
+    width: 25%;
+    height: 40px;
+    background-color: black;
+    text-align: center;
+    opacity: 0.9;
+    line-height: 40px;
+    font-size: 20px;
+}
+.drp {
+    display: grid;
+    width: 1800px;
+}
+ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+ul li a:hover{
+    background-color: red;
+}
+ul li .drp li {
+    display: none;
+}
+ul li:hover .drp li {
+    display: block;
+}
+.image {
+    background-image: url("img/pizza.jpg");
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 40px;
+}
+.image h1 {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
