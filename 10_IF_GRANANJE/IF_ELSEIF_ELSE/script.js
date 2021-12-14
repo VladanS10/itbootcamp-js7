@@ -107,8 +107,10 @@ if(vreme < 17) {
 // Zadatak 12
 let p1 = 7;
 let k1 = 15;
+
 let p2 = 9;
 let k2 = 17;
+
 if(k1 < p2) {
     console.log("Ne preklapaju se");
 } else if (k2 < p1) {
