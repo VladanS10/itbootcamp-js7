@@ -362,3 +362,17 @@ function sedmiDan(dan){
     }
     let pov = praksa(3, 1000, 150);
     // console.log(pov);
+
+
+    // 16. Zadatak
+
+    function most(t, p, n){
+        let wait = n + p - t;
+        if(p>t || t >= p + n){
+            console.log(`Radi `);
+        }
+        else{
+            console.log(`Krene kroz ${wait}`);
+        }
+    }
+    most(17, 16,16);
