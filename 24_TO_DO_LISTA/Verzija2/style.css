@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1 {
+    padding: 25px;
+    color: blue;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+li {
+    cursor: pointer;
+    padding: 25px;
+    border: 1px solid gray;
+    width: 300px;
+    margin: 15px;
+    background-color: rgb(151, 151, 207);
+    font-size: 20px;
+    font-weight: bold;
+}
+li:hover{
+    background-color: rgb(115, 115, 233);
+}
+input {
+    padding: 5px;
+    margin: 15px;
+    width: 300px;
+}
+#btnDodaj {
+    margin-left: 15px;
+    padding: 10px;
+    width: 300px;
+    background-color: lightskyblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+#btnDodaj:hover{
+    background-color: lightyellow;
+    color: mediumblue;
+}
+#dodajNaPocetak{
+    width: 15px;
+}
+#dodajNaKraj{
+    width: 15px;
+}
+label {
+    font-weight: bold;
+}

@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1 {
+    padding: 25px;
+    color: blue;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+li {
+    padding: 25px;
+    border: 1px solid gray;
+    width: 300px;
+    margin: 15px;
+    background-color: rgb(151, 151, 207);
+    font-size: 20px;
+    font-weight: bold;
+}
+li:hover{
+    background-color: rgb(115, 115, 233);
+}
+.lineThrough{
+    text-decoration: line-through;
+}
