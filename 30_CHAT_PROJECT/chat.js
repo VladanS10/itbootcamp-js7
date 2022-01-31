@@ -32,7 +32,14 @@ export class Chatroom {
         return response;
     }
     getChats(callback){
-        this.chat.onSnapshot 
+        this.chat.onSnapshot( snapshot =>{
+            snapshot.docChanges().forEach(change =>{
+                if(change.type == "added"){
+                    // console.log("uspesno");
+                    callback(change.doc.data())
+                }
+            })
+        });
     }
 }
 
