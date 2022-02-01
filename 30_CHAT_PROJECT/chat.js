@@ -32,7 +32,10 @@ export class Chatroom {
         return response;
     }
     getChats(callback){
-        this.chat.onSnapshot( snapshot =>{
+        this.chat
+        .where('room', '==', this.room)
+        .orderBy('created_at')
+        .onSnapshot( snapshot =>{
             snapshot.docChanges().forEach(change =>{
                 if(change.type == "added"){
                     // console.log("uspesno");

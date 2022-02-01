@@ -28,3 +28,8 @@ console.log(chat2);
 chat2.getChats(d=>{
     console.log(d);
 });
+
+chat2.getChats(data =>{
+    console.log(data);
+})
+// console.log(chat2.getChats);
