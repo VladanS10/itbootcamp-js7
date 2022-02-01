@@ -38,3 +38,11 @@ chat2.getChats(data =>{
 let Ul_lista = document.querySelector('ul')
 let chatUl = new ChatUl(Ul_lista)
 console.log(chatUl.lista); 
+
+chat2.getChats(data =>{
+    console.log(data);
+})
+
+chat2.getChats(data =>{
+    chatUl.templateLi(data)
+})

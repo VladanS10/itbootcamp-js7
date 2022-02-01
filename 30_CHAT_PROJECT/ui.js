@@ -13,6 +13,14 @@ class ChatUl {
 
     templateLi(data){
         
+        let listHtml =
+        `<li>
+            ${data.username} : ${data.message}
+            <br>
+            ${data.created_at}
+        </li>
+        `
+        this.lista.innerHTML += listHtml
     }
 }
 
