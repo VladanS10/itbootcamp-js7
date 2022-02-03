@@ -3,76 +3,194 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img/chat.jpg");
 }
 
 header {
-    color: purple;
+    color: black;
+    font-weight: bold;
 }
 .btn{
-    background-color: purple;
-    color: white;
+    background-color: lightseagreen;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
     width: 150px;
     border-radius: 5px;
     height: 25px;
     border: none;
 }
 .btn:hover{
-    background-color: rgb(56, 1, 56);
+    background-color: rgb(77, 77, 238);
 }
 .input_submit{
     border: none;
     width: 130px;
-    background-color: purple;
-    color: white;
+    background-color: lightseagreen;
+    font-weight: bold;
+    color: black;
     margin-top: 20px;
     height: 25px;
     border-radius: 5px;
 }
 .input_submit:hover{
-    background-color: rgb(56, 1, 56);
+    background-color: rgb(77, 77, 238);
 }
 input {
     width: 300px;
+    height: 25px;
 }
 ul {
     list-style: none;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 50vh;
 }
 
-
-
-/* .col-t-1 {
-    width: 8.33%;
+ul li:nth-child(odd) {
+    background-color: blanchedalmond;
+    margin: 5px;
+    border-radius: 0px 5px 5px 5px;
+    width: 49%;
+    float: left;
 }
-.col-t-2 {
-    width: 16.66%;
+ul li:nth-child(even) {
+    background-color: blueviolet;
+    margin: 5px;
+    border-radius: 5px;
+    width: 49%;
+    float: right;
+    border-radius: 5px 0px 5px 5px;
 }
-.col-t-3 {
-    width: 25%;
-}
-.col-t-4 {
-    width: 33.33%;
-}
-.col-t-5 {
-    width: 41.66%;
-}
-.col-t-6 {
-    width: 50%;
-}
-.col-t-7 {
-    width: 58.33%;
-}
-.col-t-8 {
-    width: 66.66%;
-}
-.col-t-9 {
-    width: 75%;
-}
-.col-t-10 {
-    width: 83.33%;
-}
-.col-t-11 {
-    width: 91.66%;
-}
-.col-t-12 {
+.row {
     width: 100%;
-} */
+    padding-bottom: 20px;
+}
+.all {
+    width: 50%;
+    margin: 50px 10px; 
+    border-radius: 40px;
+    background-color: rgb(169, 219, 241);
+}
+
+
+
+
+
+
+
+ /* MEDIA QUERY ZA MOBILNI */
+
+ @media only screen and (max-width: 425px){
+        .all {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 40px;
+            margin: 50px 10px;
+            background-color: white;
+            z-index: 99;
+            background-color: rgb(169, 219, 241);
+            }
+        input {
+            height: 25px;
+        }
+        .row{
+            width: 80%;
+            margin: 20px 40px;
+            text-align: center;
+        }
+        [class*="col-"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .input_submit{
+            margin: 0;
+        }
+        .col-m-1 {
+         width: 8.33%;
+        }
+        .col-m-2 {
+            width: 16.66%;
+        }
+        .col-m-3 {
+            width: 25%;
+        }
+        .col-m-4 {
+            width: 33.33%;
+        }
+        .col-m-5 {
+            width: 41.66%;
+        }
+        .col-m-6 {
+            width: 50%;
+        }
+        .col-m-7 {
+            width: 58.33%;
+        }
+        .col-m-8 {
+            width: 66.66%;
+        }
+        .col-m-9 {
+            width: 75%;
+        }
+        .col-m-10 {
+            width: 83.33%;
+        }
+        .col-m-11 {
+            width: 91.66%;
+        }
+        .col-m-12 {
+            width: 100%;
+        }
+    }
+
+     /* MEDIA QUERY ZA TABLET */
+
+     @media only screen and (min-width: 425px) and (max-width: 768px){
+         .all {
+             width: 100%;
+         }
+        .btn {
+            margin: 5px;
+        }
+        .col-t-1 {
+            width: 8.33%;
+        }
+        .col-t-2 {
+            width: 16.66%;
+        }
+        .col-t-3 {
+            width: 25%;
+        }
+       .col-t-4 {
+           width: 33.33%;
+       }
+       .col-t-5 {
+           width: 41.66%;
+       }
+       .col-t-6 {
+            width: 50%;
+        }
+       .col-t-7 {
+           width: 58.33%;
+        }
+       .col-t-8 {
+           width: 66.66%;
+        }
+       .col-t-9 {
+           width: 75%;
+        }
+       .col-t-10 {
+           width: 83.33%;
+        }
+       .col-t-11 {
+           width: 91.66%;
+        }
+       .col-t-12 {
+           width: 100%;
+       }
+     }

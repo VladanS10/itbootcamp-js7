@@ -11,6 +11,7 @@ class ChatUl {
         return this._lista
     }
 
+
     formatDate(date){
         let d = date.getDate();
         let m = date.getMonth() + 1;
@@ -37,14 +38,10 @@ class ChatUl {
             ${data.username} : ${data.message}
             <br>
             ${strDate}
-            
-            
         </li>
         `
         this.lista.innerHTML += listHtml
     }
 }
-
-
 
 export default ChatUl

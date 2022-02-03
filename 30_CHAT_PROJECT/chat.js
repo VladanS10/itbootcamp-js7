@@ -8,8 +8,14 @@ class Chatroom {
     set room(r){
         this._room = r
     }
-    set username(u){
-        this._username = u;
+    set username(u){ 
+        let newU = this._username.trim()
+        if(newU.length >= 2 && newU.length <= 10){
+            this._username = u;
+        }
+        else{
+            alert(`Unesi lepo ime`)
+        }
     }
 
     // GETERI
@@ -19,7 +25,10 @@ class Chatroom {
     get username(){
         return this._username
     }
-
+    updateUsername(uu){
+        this._username = uu;
+    }
+    
     async addChat(msg) {
         let date = new Date()
         let docChat = {
