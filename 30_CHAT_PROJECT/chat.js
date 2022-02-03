@@ -9,13 +9,7 @@ class Chatroom {
         this._room = r
     }
     set username(u){ 
-        let newU = this._username.trim()
-        if(newU.length >= 2 && newU.length <= 10){
             this._username = u;
-        }
-        else{
-            alert(`Unesi lepo ime`)
-        }
     }
 
     // GETERI
