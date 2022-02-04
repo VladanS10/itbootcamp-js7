@@ -2,7 +2,8 @@ class Chatroom {
     constructor(r, u){
         this.room = r;
         this.username = u;
-        this.chat = db.collection('chats')
+        this.chat = db.collection('chats');
+        this.unsub = false 
     }
     // SETERI
     set room(r){
@@ -20,7 +21,18 @@ class Chatroom {
         return this._username
     }
     updateUsername(uu){
-        this._username = uu;
+            this._username = uu;
+            localStorage.setItem('lsUsername', uu)
+    }
+    updateRoom(r){
+        this.room = r
+    }
+    // Update rooma
+    updateRoom(ur) {
+        this.room = ur;
+        if(this.unsub != false){
+            this.unsub();
+        }
     }
     
     async addChat(msg) {
@@ -35,13 +47,12 @@ class Chatroom {
         return response;
     }
     getChats(callback){
-        this.chat
+        this.unsub = this.chat
         .where('room', '==', this.room)
         .orderBy('created_at')
         .onSnapshot( snapshot =>{
             snapshot.docChanges().forEach(change =>{
                 if(change.type == "added"){
-                    // console.log("uspesno");
                     callback(change.doc.data())
                 }
             })

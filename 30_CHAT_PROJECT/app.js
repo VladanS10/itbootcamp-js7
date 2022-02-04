@@ -9,17 +9,21 @@ let inputMessage = document.getElementById("inputMessage")
 let updateMessage = document.getElementById("updateMessage")
 let inputUsername = document.getElementById("inputUsername")
 
+let navBar = document.querySelector('nav')
+
 
 // Objekti klasa / Instance klasa
-let chat = new Chatroom("#general", "Vladan")
+let newUsername = "Anonymus";
+if(localStorage.lsUsername){
+    newUsername = localStorage.lsUsername
+}
+let chat = new Chatroom("general", newUsername)
 let chatUl = new ChatUl(Ul_lista)
-
 
 // Ispis dokumenata iz db na stranici
 chat.getChats(data =>{
     chatUl.templateLi(data)
 })
-
 
 
 sendMessage.addEventListener("submit", (e)=>{
@@ -41,3 +45,14 @@ updateMessage.addEventListener("submit", (e) =>{
     updateMessage.reset();
 })
 
+navBar.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(e.target.tagName == "BUTTON"){
+        console.log(e.target.id);
+        chatUl.clear();
+        chat.updateRoom(e.target.id)
+        chat.getChats(data =>{
+            chatUl.templateLi(data)
+        })
+    }
+})

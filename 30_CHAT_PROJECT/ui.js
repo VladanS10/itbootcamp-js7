@@ -42,6 +42,10 @@ class ChatUl {
         `
         this.lista.innerHTML += listHtml
     }
+
+    clear(){
+        this.lista.innerHTML = "";
+    }
 }
 
 export default ChatUl
