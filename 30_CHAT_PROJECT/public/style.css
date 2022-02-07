@@ -74,7 +74,7 @@ i{
     width: 49%;
     float: left;
 } */
-#changeUsername{
+#changeUsername.show{
     width: 50px;
     color: wheat;
     /* position: absolute;

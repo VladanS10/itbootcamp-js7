@@ -56,15 +56,24 @@ let promenaImena = document.getElementById('changeUsername')
         if(newUser === el.firstChild.innerHTML){
             el.classList.add('right')
         }
+        else{
+            el.classList.add('left')
+        }
     });
     
-    promenaImena.innerHTML = newUser;
-    let par = document.createElement('p')
-    setTimeout(function(){
-        updateMessage.appendChild(par)
-        promenaImena.remove();
-    }, 3000);
-    
+    chat.updateUsername(newUser)
+    if(chat.validate_user(newUser)){
+        let par = document.createElement('p')
+        par.innerHTML = newUser.trim();
+        // par.style.color = "blue";
+        promenaImena.appendChild(par);
+        promenaImena.classList.toggle("show")
+        setTimeout(function(){
+            promenaImena.classList.toggle("show")
+            par.remove();
+        }, 3000);
+        
+    }
     updateMessage.reset();
 })
 
