@@ -28,19 +28,50 @@ class ChatUl {
 
         return strDate;
     }
-
-    templateLi(data){
+    
+   
+    templateLi(doc){
+        let id = doc.id;
+        let data = doc.data();
+        let iconDelete = '<i class="fas fa-trash-alt"></i>';
         let date = data.created_at.toDate();
         let strDate = this.formatDate(date);
-
-        let listHtml =
-        `<li>
-            ${data.username} : ${data.message}
-            <br>
-            ${strDate}
-        </li>
-        `
-        this.lista.innerHTML += listHtml
+        let listItem = document.createElement('li')
+        listItem.classList.remove('right')
+        let today = new Date();
+        if(data.message != ""){
+            if(date.getDate() === today.getDate()){
+                listItem.setAttribute('id', id);
+                listItem.innerHTML =
+                `<span>${data.username}</span> : ${data.message}
+                <br>
+                ${String(date.getHours()).padStart(2, "0")}:${String(
+                    date.getMinutes()
+                  ).padStart(2, "0")} ${iconDelete}`
+                if(data.username == localStorage.lsUsername){
+                    listItem.classList.add("right")
+                }
+                else{
+                    listItem.classList.add('left')
+                }
+                this.lista.appendChild(listItem);
+            }
+            
+            else{
+                listItem.setAttribute('id', id);
+                listItem.innerHTML =
+                `
+                <span>${data.username}</span> : ${data.message}
+                <br>
+                ${strDate} ${iconDelete}
+                `;
+                listItem.classList.remove('right');
+                if(data.username == localStorage.lsUsername){
+                    listItem.classList.add('right')
+                }
+            }
+            this.lista.appendChild(listItem);
+        }
     }
 
     clear(){

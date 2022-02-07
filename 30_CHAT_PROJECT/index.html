@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Stojic Project</title>
 </head>
 <body>
     <div class="all">
@@ -22,28 +26,40 @@
      <button class="btn col-m-12 col-t-4" id="test">#test</button>
  </nav>
 
-
  
  <section>
-     <ul>
-         
+     <ul id="unList">
+
+
+
+        <p id="changeUsername"></p>
     </ul>
 </section>
 
+<form action="" class="row" id="colorForm">
+    <input type="color" id="changeColor" class="col-m-12 col-l-8" value="#fafafa">
+    <input type="submit" class="input_submit"  value="Update color" class="btn col-m-12 col-l-4" id="btnColor">
+</form>
+
+<form action="" class="row" id="dates">
+    <input type="datetime-local" class="col-m-12" name="" id="startDate">
+    <input type="datetime-local" class="col-m-12" name="" id="endDate">
+    <input type="submit" class="input_submit col-m-5" value="Update Date" id="updateDate">
+</form>
 
 
  <form id="sendMessage" class="row">
-         <input type="text" placeholder="Your message..." id="inputMessage" class="col-m-12">
-         <input type="submit" class="input_submit" value="Send" class="btn col-m-12">
+         <textarea type="text" placeholder="Your message..." id="inputMessage" class="col-m-12"></textarea>
+         <input type="submit" class="input_submit" value="Send" class="btn col-m-12" id="btnSend">
 </form>
 <form action="" id="updateMessage" class="row">
     <input type="text" placeholder="Update username" id="inputUsername" class="col-m-12">
     <input type="submit" class="input_submit" value="Update" class="btn col-m-12">
+    
 </form>
 </div>
-<div id="username">
-    <p></p>
-</div>
+    
+
 
 
 

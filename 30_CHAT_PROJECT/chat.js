@@ -10,7 +10,15 @@ class Chatroom {
         this._room = r
     }
     set username(u){ 
+        if (this.validate_user(u)) {
             this._username = u;
+          } 
+        else {
+            alert(
+              "Username must be between 2 and 10 characters long and cannot be made of spaces only"
+            );
+          }
+      
     }
 
     // GETERI
@@ -20,10 +28,25 @@ class Chatroom {
     get username(){
         return this._username
     }
-    updateUsername(uu){
-            this._username = uu;
-            localStorage.setItem('lsUsername', uu)
-    }
+    updateUsername(u) {
+        if (this.validate_user(u)) {
+          this._username = u;
+          localStorage.setItem('lsUsername', u)
+        } else {
+          alert(
+            "Username must be between 2 and 10 characters long and cannot be made of spaces only"
+          );
+        }
+      }
+    validate_user(u){
+
+        let u1 = u.trim();
+        if (u1.length >= 2 && u1.length <= 10) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     updateRoom(r){
         this.room = r
     }
@@ -33,6 +56,19 @@ class Chatroom {
         if(this.unsub != false){
             this.unsub();
         }
+    }
+    deleteMsg(id){
+        this.chat
+        .doc(id)
+        .delete()
+        .then((data)=>{
+
+            console.log(`Uspsno obrisano ${data}`);
+        }
+        )
+        .catch(err=>{
+            console.log(`greska ${err}`);
+        });
     }
     
     async addChat(msg) {
@@ -46,6 +82,23 @@ class Chatroom {
         let response = await this.chat.add(docChat)
         return response;
     }
+    
+
+    filterDate(callback, startDate, endDate){
+        this.unsub = this.chat
+        .where('room', '==', this.room)
+        .where('created_at', '>=', startDate)
+        .where('created_at', '<=', endDate)
+        .orderBy('created_at')
+        .onSnapshot( snapshot =>{
+            snapshot.docChanges().forEach(change =>{
+                if(change.type == "added"){
+                    callback(change.doc)
+                }
+            })
+        });
+    }
+
     getChats(callback){
         this.unsub = this.chat
         .where('room', '==', this.room)
@@ -53,7 +106,7 @@ class Chatroom {
         .onSnapshot( snapshot =>{
             snapshot.docChanges().forEach(change =>{
                 if(change.type == "added"){
-                    callback(change.doc.data())
+                    callback(change.doc)
                 }
             })
         });
@@ -61,4 +114,3 @@ class Chatroom {
 }
 
 export default Chatroom
-

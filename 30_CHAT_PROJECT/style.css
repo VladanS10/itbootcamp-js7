@@ -6,15 +6,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("img/chat.jpg");
+    background-color: #c9c4c4;
 }
 
+
 header {
-    color: black;
+    color: #095243;
     font-weight: bold;
 }
 .btn{
-    background-color: lightseagreen;
+    background-color: #4dc792;
     color: black;
     font-size: 15px;
     font-weight: bold;
@@ -24,24 +25,29 @@ header {
     border: none;
 }
 .btn:hover{
-    background-color: rgb(77, 77, 238);
+    background-color: wheat;
+}
+.btn:focus{
+    background-color: wheat;
 }
 .input_submit{
     border: none;
     width: 130px;
-    background-color: lightseagreen;
+    background-color: #4dc792;
     font-weight: bold;
     color: black;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: 25px;
     border-radius: 5px;
 }
 .input_submit:hover{
-    background-color: rgb(77, 77, 238);
+    background-color: wheat;
 }
-input {
-    width: 300px;
+input, textarea {
+    background-color: wheat;
+    width: 400px;
     height: 25px;
+    font-weight: bold;
 }
 ul {
     list-style: none;
@@ -50,16 +56,47 @@ ul {
     overflow-y: auto;
     height: 50vh;
 }
+ul li{
+    overflow: hidden;
+    font-weight: bold;
+}
+i{
+    float: right;
+    padding-right: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
 
-ul li:nth-child(odd) {
+/* ul li:nth-child(odd) {
     background-color: blanchedalmond;
     margin: 5px;
     border-radius: 0px 5px 5px 5px;
     width: 49%;
     float: left;
+} */
+#changeUsername{
+    width: 50px;
+    color: wheat;
+    /* position: absolute;
+    bottom: 10px;
+    right: 30%; */
+    font-size: 30px;
 }
-ul li:nth-child(even) {
-    background-color: blueviolet;
+/* .active{
+    transform: scale(1.1);
+} */
+ul li.left{
+    background-color: wheat;
+    color: #095243;
+    margin: 5px;
+    border-radius: 0px 5px 5px 5px;
+    width: 49%;
+    float: left;
+}
+
+ul li.right{
+    background-color: #095243;
+    color: wheat;
     margin: 5px;
     border-radius: 5px;
     width: 49%;
@@ -68,16 +105,44 @@ ul li:nth-child(even) {
 }
 .row {
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .all {
     width: 50%;
-    margin: 50px 10px; 
+    margin: 30px 10px; 
     border-radius: 40px;
-    background-color: rgb(169, 219, 241);
+    background-color: #999999;
 }
 
-
+#btnSend{
+    margin-top: 0px;
+    margin-left: 5px;
+}
+#sendMessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#colorForm{
+    /* margin: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btnColor{
+    margin-left: 5px;
+}
+#changeColor{
+    width: 400px;
+    height: 25px;
+}
+#startDate{
+    width: 190px;
+    margin-bottom: 20px;
+}
+#endDate{
+    width: 200px;
+}
 
 
 
@@ -91,9 +156,8 @@ ul li:nth-child(even) {
             border: 1px solid black;
             border-radius: 40px;
             margin: 50px 10px;
-            background-color: white;
+            background-color: #999999;
             z-index: 99;
-            background-color: rgb(169, 219, 241);
             }
         input {
             height: 25px;
@@ -103,12 +167,27 @@ ul li:nth-child(even) {
             margin: 20px 40px;
             text-align: center;
         }
+        #colorForm{
+            display: block;
+        }
+        #btnColor{
+            margin-top: 5px;
+        }
+        #dates{
+            display: block;
+        }
+        #changeColor{
+            width: 100%;
+        }
         [class*="col-"] {
             width: 100%;
             margin: 10px 0;
         }
         .input_submit{
             margin: 0;
+        }
+        #sendMessage{
+            display: block;
         }
         .col-m-1 {
          width: 8.33%;
@@ -154,6 +233,9 @@ ul li:nth-child(even) {
          .all {
              width: 100%;
          }
+         #sendMessage{
+             display: block;
+         }
         .btn {
             margin: 5px;
         }
@@ -191,6 +273,54 @@ ul li:nth-child(even) {
            width: 91.66%;
         }
        .col-t-12 {
+           width: 100%;
+       }
+     }
+     @media only screen and (min-width: 768px) and (max-width: 1024px){
+
+        .all {
+            width: 80%;
+        }
+        #sendMessage{
+            display: block;
+        }
+        .btn {
+           margin: 5px;
+        }
+        .col-l-1 {
+            width: 8.33%;
+        }
+        .col-l-2 {
+            width: 16.66%;
+        }
+        .col-l-3 {
+            width: 25%;
+        }
+       .col-l-4 {
+           width: 33.33%;
+       }
+       .col-l-5 {
+           width: 41.66%;
+       }
+       .col-l-6 {
+            width: 50%;
+        }
+       .col-l-7 {
+           width: 58.33%;
+        }
+       .col-l-8 {
+           width: 66.66%;
+        }
+       .col-l-9 {
+           width: 75%;
+        }
+       .col-l-10 {
+           width: 83.33%;
+        }
+       .col-l-11 {
+           width: 91.66%;
+        }
+       .col-l-12 {
            width: 100%;
        }
      }
